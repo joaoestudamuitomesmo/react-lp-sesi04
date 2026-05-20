@@ -1,47 +1,3 @@
-:root {
-    --lime-cream: #d9ed92ff;
-    --light-green: #b5e48cff;
-    --light-green-2: #99d98cff;
-    --emerald: #76c893ff;
-    --ocean-mist: #52b69aff;
-    --tropical-teal: #34a0a4ff;
-    --bondi-blue: #168aadff;
-    --cerulean: #1a759fff;
-    --baltic-blue: #1e6091ff;
-    --yale-blue: #184e77ff;
-}
-
-@font-face {
-    font-family: 'BuilderSans';
-    src: url('/assets/BuilderSans-Medium-500.otf') format('opentype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding: 8px;
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-    max-width: calc(100vw - 24px);
-    z-index: 999;
-    animation: fromTop 500ms ease-in-out;
-    transition: all 100ms ease-in-out;
-}
-
-@keyframes fromTop {
-    0%   { transform: translateY(-100px) translateX(-50%); }
-    100% { transform: translateY(0px)    translateX(-50%); }
-}
-
 .navitems {
     display: flex;
     align-items: center;
@@ -66,97 +22,6 @@ nav {
     transition: all 200ms linear;
     font-weight: 700;
     white-space: nowrap;
-}
-
-nav.sc {
-    background-color: var(--tropical-teal);
-}
-
-section {
-    min-height: 100vh;
-    height: auto;
-}
-
-#s1 {
-    background-image: url('/assets/images/bg.webp');
-    background-size: cover;
-    background-attachment: scroll;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 80px 16px 80px;
-}
-
-#s2 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    min-height: 70vh;
-    padding: 60px 16px;
-}
-
-#s3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 60px 16px;
-}
-
-#s4 {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    padding: 80px 16px;
-}
-
-h1 {
-    font-size: clamp(48px, 12vw, 160px);
-    line-height: 1;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    text-transform: uppercase;
-    text-shadow: 0px 1px 5px var(--emerald);
-    letter-spacing: clamp(2px, 0.5vw, 7px);
-    width: 100%;
-    text-align: center;
-    animation: esquerda 500ms ease-in-out;
-    color: white;
-}
-
-@keyframes esquerda {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-}
-
-h2 {
-    font-size: clamp(18px, 3.5vw, 36px);
-    word-break: break-word;
-    overflow-wrap: break-word;
-    text-transform: uppercase;
-    text-shadow: 0px 1px 5px var(--emerald);
-    letter-spacing: clamp(2px, 0.4vw, 7px);
-    width: 100%;
-    text-align: center;
-    animation: direita 500ms ease-in-out;
-    color: white;
-}
-
-@keyframes direita {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
 }
 
 .card {
@@ -241,48 +106,6 @@ h2 {
     text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
 }
 
-iframe {
-    border-radius: 15px;
-    box-shadow: 0px 5px 0px black;
-    max-width: 100%;
-}
-
-footer {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background-color: var(--light-green);
-    border-radius: 9999px;
-    width: fit-content;
-    max-width: calc(100vw - 24px);
-    z-index: 999;
-    animation: fromBottom 500ms ease-in-out;
-    transition: all 200ms ease-in-out;
-}
-
-footer.ft {
-    background-color: var(--tropical-teal);
-}
-
-@keyframes fromBottom {
-    0%   { transform: translateY(100px) translateX(-50%); }
-    100% { transform: translateY(0px)   translateX(-50%); }
-}
-
-footer a {
-    transition: all 100ms ease-in-out;
-}
-
-footer a:hover {
-    transform: scale(1.1);
-}
-
 .container::-webkit-scrollbar { display: none; }
 .container {
     -ms-overflow-style: none;
@@ -292,20 +115,6 @@ footer a:hover {
 @media (max-width: 700px) {
     .navitems a {
         display: none;
-    }
-
-    #s1 {
-        background-image: url('/assets/images/mobilebg.jpg');
-    }
-
-    section {
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
-
-    #s2 {
-        gap: 20px;
-        padding: 70px 12px;
     }
 
     .card {
@@ -319,17 +128,6 @@ footer a:hover {
 }
 
 @media (max-width: 380px) {
-    h1 {
-        font-size: 40px;
-        letter-spacing: 2px;
-    }
-
-    h2 {
-        font-size: 16px;
-        letter-spacing: 2px;
-        margin-top: 8px;
-    }
-
     .navitems {
         padding: 6px 10px;
     }

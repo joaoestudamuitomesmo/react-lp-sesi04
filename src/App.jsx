@@ -5,17 +5,14 @@ import img3 from '/images/03.jpg'
 import { useEffect } from 'react'
 
 function navTo(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', 
+        block: 'start' })
 }
 
 function enviar() {
-      const nome = document.getElementById("nome").value;
-    const assunto = document.getElementById("assunto").value;
-
-    const mensagem = `Gostaria de entrar em contato \n\nNome: ${nome}\nAssunto: ${assunto}`;
-    
-    const msg = encodeURI(mensagem)
-    window.open(`https://wa.me/5141984006639?text=${mensagem}`)
+  const nome = document.getElementById('nome').value
+  const assunto = document.getElementById('assunto').value
+  alert(`Mensagem enviada!\nNome: ${nome}\nMensagem: ${assunto}`)
 }
 
 function App() {
@@ -35,7 +32,26 @@ function App() {
       observer.observe(card)
     })
 
-    return () => observer.disconnect()
+    const nav = document.querySelector('nav')
+    const footer = document.querySelector('footer')
+ 
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        nav.classList.add('sc')
+        footer.classList.add('ft')
+      } else {
+        nav.classList.remove('sc')
+        footer.classList.remove('ft')
+      }
+      if (window.scrollY > 2) {
+        const newRadius = (window.scrollY / 50) + 5 + 'px'
+        nav.style.borderRadius = newRadius
+        footer.style.borderRadius = newRadius
+      }
+    }
+ 
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
