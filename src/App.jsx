@@ -56,7 +56,7 @@ function App() {
 
   return (
     <>
-      <nav>
+      {/* <nav>
         <span className={s.navitems} onClick={() => navTo('s1')}>
           <i className="fa-solid fa-house"></i>
           <a>Robux</a>
@@ -73,7 +73,36 @@ function App() {
           <i className="fa-solid fa-address-book"></i>
           <a>Contato</a>
         </span>
-      </nav>
+      </nav> */}
+
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button> 
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <div className={s.navitems}>
+                <i className="fa-solid fa-house"></i>
+                <a onClick={() => navTo('s1')}>Robux</a>
+              </div>
+              <div className={s.navitems}>
+                <i className="fa-solid fa-money-bill"></i>
+                <a onClick={() => navTo('s2')}>Verdadeiro</a>
+              </div>
+              <div className={s.navitems}>
+                <i className="fa-solid fa-video"></i>
+                <a onClick={() => navTo('s3')}>Builderman</a>
+              </div>
+              <div className={s.navitems}>
+                <i className="fa-solid fa-address-book"></i>
+                <a onClick={() => navTo('s4')}>Contato</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
 
       <main>
         <section id="s1">
